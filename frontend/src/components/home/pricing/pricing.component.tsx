@@ -13,7 +13,7 @@ const pricingPlans = [
     ],
     buttonLabel: "Get Started",
     buttonStyle:
-      "bg-gray-600 text-gray-200 hover:bg-gray-500 hover:shadow-gray-500/20",
+      "bg-slate-700 text-white hover:bg-slate-600 hover:shadow-slate-500/20",
     highlight: false,
     linkto: "/signup",
   },
@@ -46,7 +46,7 @@ const pricingPlans = [
     ],
     buttonLabel: "Contact Sales",
     buttonStyle:
-      "bg-slate-800 text-white hover:bg-slate-700 hover:shadow-blue-500/20",
+      "bg-slate-700 dark:bg-slate-800 text-white hover:bg-slate-600 dark:hover:bg-slate-700 hover:shadow-blue-500/20",
     highlight: false,
     linkto: "/payment",
   },
@@ -62,6 +62,12 @@ const PricingComponent = () => {
           Simple, Transparent Pricing
         </h2>
         <p className="story-section-copy mt-4">
+    <section className="mb-16 py-12" id="pricing-section">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-gray-300">
+          Simple, Transparent Pricing
+        </h2>
+        <p className="mt-4 text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">
           Choose the plan that best fits your needs
         </p>
       </div>
@@ -96,6 +102,14 @@ const PricingComponent = () => {
               <span className="text-slate-500">{plan.duration}</span>
             </div>
             <ul className="mb-8 space-y-3 text-slate-400">
+            <h3 className="text-xl font-semibold mb-2 text-slate-900 dark:text-gray-300">
+              {plan.title}
+            </h3>
+            <div className="mb-4">
+              <span className="text-4xl font-bold text-slate-900 dark:text-gray-300">{plan.price}</span>
+              <span className="text-slate-500 dark:text-gray-500">{plan.duration}</span>
+            </div>
+            <ul className="space-y-3 mb-8 text-slate-600 dark:text-gray-500">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-center">
                   <i className="fas fa-check text-green-500 mr-2"></i>

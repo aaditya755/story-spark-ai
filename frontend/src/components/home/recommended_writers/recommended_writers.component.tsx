@@ -41,6 +41,8 @@ const RecommendedWritersComponent = () => {
     <>
       <section className="story-panel rounded-lg p-5 sm:p-6">
         <h3 className="mb-5 text-lg font-bold tracking-tight text-slate-100">
+      <section className="bg-blue-500/10 rounded-lg shadow-sm p-6">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-gray-300 mb-4">
           Recommended Writers
         </h3>
 
@@ -72,6 +74,17 @@ const RecommendedWritersComponent = () => {
                 onClick={() => toggleFollow(index)}
                 className="motion-cta shrink-0 rounded-full border border-indigo-400/25 bg-indigo-500/10 px-3 py-1.5 text-sm font-semibold text-indigo-200 hover:border-indigo-300/50 hover:bg-indigo-500/20 hover:text-white"
               >
+            <div key={index} className="flex items-center justify-between">
+              <div className="flex items-center">
+                <img className="h-10 w-10 rounded-full" src={writer.image} alt={writer.name} />
+
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-slate-700 dark:text-gray-400">{writer.name}</p>
+                  <p className="text-xs text-slate-500 dark:text-gray-500">{writer.role}</p>
+                </div>
+              </div>
+
+              <button onClick={() => toggleFollow(index)} className="!rounded-button text-indigo-600 text-sm font-medium hover:text-indigo-700 cursor-pointer">
                 {following.includes(index) ? "Following" : "Follow"}
               </button>
             </div>
@@ -86,29 +99,16 @@ const RecommendedWritersComponent = () => {
               <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i className="fas fa-user-lock text-2xl text-blue-400"></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-200 mb-2">
-                Authentication Required
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                You need to log in or sign up to follow writers.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-200 mb-2">Authentication Required</h3>
+              <p className="text-gray-400 mb-6 leading-relaxed">You need to log in or sign up to follow writers.</p>
               <div className="flex flex-col gap-3">
-                <Link
-                  to="/login"
-                  className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25"
-                >
+                <Link to="/login" className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
                   Log In
                 </Link>
-                <Link
-                  to="/signup"
-                  className="w-full bg-white/5 hover:bg-white/10 text-white font-medium py-3 px-4 rounded-xl transition-all border border-white/10"
-                >
+                <Link to="/signup" className="w-full bg-white/5 hover:bg-white/10 text-white font-medium py-3 px-4 rounded-xl transition-all border border-white/10">
                   Sign Up
                 </Link>
-                <button
-                  onClick={() => setShowLoginModal(false)}
-                  className="w-full bg-transparent hover:bg-white/5 text-gray-400 hover:text-gray-300 font-medium py-3 px-4 rounded-xl transition-all mt-1"
-                >
+                <button onClick={() => setShowLoginModal(false)} className="w-full bg-transparent hover:bg-white/5 text-gray-400 hover:text-gray-300 font-medium py-3 px-4 rounded-xl transition-all mt-1">
                   Cancel
                 </button>
               </div>
