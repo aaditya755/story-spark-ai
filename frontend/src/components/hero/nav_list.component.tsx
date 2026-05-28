@@ -28,7 +28,7 @@ const NavListComponent: React.FC = () => {
       {isActive && (
         <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-custom animate-pulse shadow-[0_0_8px_#3b82f6]" />
       )}
-      <span className="block max-w-[6.75rem] whitespace-normal text-center leading-tight">
+      <span className="block whitespace-nowrap text-center leading-tight">
         {label}
       </span>
     </>
@@ -85,7 +85,7 @@ const NavListComponent: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/90 supports-[backdrop-filter]:bg-white/75 dark:bg-[#0B1120]/80 dark:supports-[backdrop-filter]:bg-[#0B1120]/70 backdrop-blur-md border-b border-slate-200/70 dark:border-white/10 transition-colors duration-300 transform-gpu">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      <div className="relative z-10 mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <div className="flex items-center shrink-0">
@@ -95,7 +95,7 @@ const NavListComponent: React.FC = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden lg:flex flex-1 items-center justify-center space-x-1.5 xl:space-x-3 px-4">
+          <div className="hidden lg:flex flex-1 items-center justify-center space-x-2 xl:space-x-4 px-4">
             <NavLink to="/" end className={({ isActive }) => getLinkClass(isActive)}>
               {({ isActive }) => renderNavContent("HOME", isActive)}
             </NavLink>
@@ -150,7 +150,7 @@ const NavListComponent: React.FC = () => {
                 onClick={() => navigate("/help-center")}
                 className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full p-2 text-slate-600 dark:text-slate-400 transition-all duration-300 hover:bg-slate-200/60 hover:text-slate-900 dark:hover:bg-white/5 dark:hover:text-white"
               >
-                <i className="fas fa-circle-question"></i>
+                <i className="fas fa-search"></i>
               </button>
               {isLogin ? (
                 <button onClick={handelLogout} className="inline-flex min-h-11 items-center justify-center rounded-md px-4 py-2 text-sm font-medium leading-tight text-slate-600 transition-all duration-300 hover:bg-slate-200/60 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white">

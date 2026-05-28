@@ -48,8 +48,8 @@ const HelpHero: FC<HelpHeroProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center justify-center mx-auto px-4 py-1.5 mb-6 rounded-full border border-white/20 bg-blue-500/20 text-white">
-            <span className="text-sm font-medium">SUPPORT &amp; GUIDANCE</span>
+          <div className="inline-flex items-center justify-center mx-auto px-4 py-1.5 mb-6 rounded-full border border-blue-500 dark:border-blue-400 bg-blue-600 dark:bg-blue-500 text-white shadow-md font-semibold tracking-wide">
+            <span className="text-sm">SUPPORT &amp; GUIDANCE</span>
             <span className="ml-2 text-sm">
               <i className="fa-solid fa-circle-question" aria-hidden="true"></i>
             </span>
