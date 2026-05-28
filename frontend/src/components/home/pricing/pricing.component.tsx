@@ -47,13 +47,13 @@ const pricingPlans = [
       "API access",
       "24/7 dedicated support",
     ],
-    buttonLabel: "Contact Sales",
+    buttonLabel: "Purchase Enterprise",
     buttonStyle:
       "bg-slate-700 dark:bg-slate-800 text-white hover:bg-slate-600 dark:hover:bg-slate-700 hover:shadow-blue-500/20",
     highlight: false,
 
-    // Enterprise → sales page
-    linkto: "/sales",
+    // Pass plan info to payment page
+    linkto: "/payment?plan=Enterprise&price=49",
   },
 ];
 
